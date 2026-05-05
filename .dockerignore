@@ -1,0 +1,49 @@
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Виртуальные окружения
+venv/
+env/
+.venv/
+.env.example
+
+# IDE и редакторы
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Логи (не нужны в контейнере)
+*.log
+logs/
+
+# Тестовые данные
+test_data/
+tmp/
+
+# Git
+.git/
+.gitignore
+
+# Qwen (отчёты и кэш)
+qwen/
+
+# Docker файлы (не нужны внутри контейнера)
+Dockerfile
+docker-compose.local.yml
+.dockerignore
+
+# Документация
+*.md
+README*
+LICENSE
+
+# Временные файлы
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    image: bourraska/account-manager:latest
+    container_name: account-manager
+    restart: unless-stopped
+    
+    # Health check для проверки работоспособности
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import os; os._exit(0)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    volumes:
+      # Конфигурация и данные менеджеров
+      - ./storage/managers:/app/storage/managers
+      # Сессии Telegram
+      - ./storage/sessions:/app/storage/sessions
+      # QR-коды
+      - ./storage/qr:/app/storage/qr
+      # Шаблоны
+      - ./storage/patterns:/app/storage/patterns
+      # Данные пользователей (фото, истории)
+      - ./storage/users:/app/storage/users
+      # Логи приложения
+      - ./logs:/app/logs
+    
+    # Ограничение ресурсов
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M

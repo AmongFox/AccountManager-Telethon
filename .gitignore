@@ -1,0 +1,59 @@
+# Файлы окружения и секреты
+.env
+.env.*
+secrets/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Дистрибуция и установка
+*.egg-info/
+dist/
+build/
+pip-log.txt
+
+# Временные файлы
+*.tmp
+*.bak
+*.swp
+*~
+
+# Логи и дампы БД
+*.log
+*.sqlite
+*.db
+
+# IDE и редакторы
+.idea/
+.vscode/
+*.code-workspace
+
+# Визуальные студии
+.DS_Store
+Thumbs.db
+
+# Вендорные зависимости (если не используете виртуальное окружение)
+venv/
+env/
+.venv/
+
+# Jupyter ноутбуки (если есть)
+.ipynb_checkpoints/
+
+# Тестовые данные
+test_data/
+tmp/
+
+# Файлы специфичные для бота
+bot.session  # Для aiogram
+webhook_cert.pem  # вебхуки
+/env_archive/
+storage/users/*
+storage/sessions/*
+storage/qr/*
+storage/patterns/*
+storage/managers/*
+/logs/
+/docker-compose.local.yml
